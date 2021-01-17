@@ -18,6 +18,8 @@ myWidget::myWidget(QWidget *parent)
 
     connect(btn1,&QPushButton::clicked,this,&QWidget::close);
     //QMetaObject::connectSlotsByName(this);
+    resize(300,200);
+    resize(600,400);
 }
 
 myWidget::~myWidget()
