@@ -20,6 +20,21 @@ myWidget::myWidget(QWidget *parent)
     //QMetaObject::connectSlotsByName(this);
     resize(300,200);
     resize(600,400);
+
+    this->zt = new Teacher(this);
+    this->st = new student(this);
+
+    //connect(zt,&Teacher::hungry,st,&student::treat);
+
+    void(Teacher::* tSignal)(QString) = &Teacher::hungry;
+    void(student::* sSignal)(QString) = &student::treat;
+    connect(zt,tSignal,st,sSignal);
+    classIsOver();
+}
+
+void myWidget::classIsOver()
+{
+    emit zt->hungry("宫保鸡丁");
 }
 
 myWidget::~myWidget()
