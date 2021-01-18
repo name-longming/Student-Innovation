@@ -2,6 +2,8 @@
 #define MYWIDGET_H
 
 #include <QWidget>
+#include "student.h"
+#include "teacher.h"
 
 class myWidget : public QWidget
 {
@@ -10,5 +12,10 @@ class myWidget : public QWidget
 public:
     myWidget(QWidget *parent = nullptr);
     ~myWidget();
+
+    Teacher * zt;
+    student * st;
+
+    void classIsOver();
 };
 #endif // MYWIDGET_H
